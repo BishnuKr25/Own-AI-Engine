@@ -1,0 +1,49 @@
+# Model configuration file
+models:
+  gemma3:
+    2b:
+      model_id: "google/gemma-2b-it"
+      optimal_batch_size: 8
+      max_sequence_length: 8192
+    9b:
+      model_id: "google/gemma-7b-it"
+      optimal_batch_size: 4
+      max_sequence_length: 8192
+    27b:
+      model_id: "google/gemma-7b-it"  # Placeholder
+      optimal_batch_size: 2
+      max_sequence_length: 8192
+  
+  llama3:
+    70b:
+      model_id: "meta-llama/Llama-2-70b-chat-hf"
+      optimal_batch_size: 1
+      max_sequence_length: 4096
+  
+  mixtral:
+    8x22b:
+      model_id: "mistralai/Mixtral-8x7B-Instruct-v0.1"
+      optimal_batch_size: 1
+      max_sequence_length: 32768
+  
+  coding:
+    codestral:
+      model_id: "mistralai/Codestral-22B-v0.1"
+      optimal_batch_size: 2
+      max_sequence_length: 32768
+    codellama:
+      model_id: "codellama/CodeLlama-34b-Instruct-hf"
+      optimal_batch_size: 1
+      max_sequence_length: 16384
+
+optimization:
+  enable_flash_attention: true
+  enable_quantization: true
+  default_quantization: "4bit"
+  gradient_checkpointing: false
+  
+performance:
+  max_concurrent_models: 3
+  model_timeout_seconds: 300
+  enable_caching: true
+  cache_ttl_seconds: 3600

@@ -1,0 +1,76 @@
+# Core Dependencies
+fastapi
+uvicorn[standard]
+python-multipart
+aiofiles
+
+# AI/ML Core
+torch
+transformers
+accelerate
+bitsandbytes
+datasets
+peft
+sentencepiece
+safetensors
+
+# LangChain Ecosystem
+langchain
+langchain-community
+langsmith
+
+# Vector Stores & Embeddings
+chromadb
+faiss-cpu
+sentence-transformers
+
+# Database
+pymongo
+motor
+redis
+
+# Document Processing
+pypdf
+PyPDF2
+python-docx
+openpyxl
+unstructured
+
+# Image/Audio Processing
+Pillow
+opencv-python-headless
+librosa
+soundfile
+
+# Security & Auth
+python-jose[cryptography]
+passlib[bcrypt]
+python-dotenv
+cryptography
+
+# Web Frameworks
+streamlit
+flask
+flask-login
+flask-wtf
+WTForms
+flask-attn
+plotly
+
+# Utilities
+pandas
+numpy
+scipy
+pydantic
+pydantic-settings
+loguru
+tqdm
+httpx
+tenacity
+pyyaml
+
+# Monitoring & Testing
+prometheus-client
+pytest
+pytest-asyncio
+pytest-cov

@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - Sovereign AI Admin{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-3 mb-4">
+        <div class="card stat-card">
+            <div class="card-body">
+                <h5 class="card-title text-muted">Total Users</h5>
+                <h2 class="mb-0">{{ stats.total_users }}</h2>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-4">
+        <div class="card stat-card">
+            <div class="card-body">
+                <h5 class="card-title text-muted">Active API Keys</h5>
+                <h2 class="mb-0">{{ stats.active_keys }}</h2>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-4">
+        <div class="card stat-card">
+            <div class="card-body">
+                <h5 class="card-title text-muted">Total Queries</h5>
+                <h2 class="mb-0">{{ stats.total_queries }}</h2>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-4">
+        <div class="card stat-card">
+            <div class="card-body">
+                <h5 class="card-title text-muted">Queries Today</h5>
+                <h2 class="mb-0">{{ stats.queries_today }}</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Quick Actions</h5>
+                <div class="d-grid gap-2">
+                    <a href="{{ url_for('create_user') }}" class="btn btn-primary">
+                        <i class="fas fa-user-plus"></i> Create User
+                    </a>
+                    <a href="{{ url_for('users') }}" class="btn btn-outline-primary">
+                        <i class="fas fa-users"></i> Manage Users
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Recent Activity</h5>
+                <div class="list-group list-group-flush">
+                    {% for query in recent_queries[:5] %}
+                    <div class="list-group-item">
+                        <small class="text-muted">{{ query.timestamp.strftime('%Y-%m-%d %H:%M') }}</small><br>
+                        <span class="badge bg-primary">{{ query.task_type }}</span>
+                        <span class="badge bg-secondary">{{ query.processing_time|round(2) }}s</span>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

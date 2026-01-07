@@ -1,0 +1,46 @@
+sovereign-ai-suite/
+├── backend/
+│   ├── __init__.py
+│   ├── main.py
+│   ├── config.py
+│   ├── core/
+│   │   ├── __init__.py
+│   │   ├── model_loader.py
+│   │   ├── council_of_experts.py
+│   │   └── task_router.py
+│   ├── services/
+│   │   ├── __init__.py
+│   │   ├── auth_service.py
+│   │   ├── rag_service.py
+│   │   └── multimodal_service.py
+│   ├── utils/
+│   │   ├── __init__.py
+│   │   ├── helpers.py
+│   │   └── logger.py
+│   └── schemas/
+│       ├── __init__.py
+│       └── models.py
+├── admin/
+│   ├── app.py
+│   ├── templates/
+│   │   ├── base.html
+│   │   ├── login.html
+│   │   ├── dashboard.html
+│   │   └── users.html
+│   └── static/
+│       └── style.css
+├── frontend/
+│   └── streamlit_app.py
+├── setup/
+│   ├── install_windows.bat
+│   ├── install_ubuntu.sh
+│   ├── requirements.txt
+│   └── setup_mongodb.sh
+├── config/
+│   ├── models_config.yaml
+│   └── .env.example
+├── scripts/
+│   ├── start_all.sh
+│   └── download_models.py
+└── tests/
+    └── test_api.py

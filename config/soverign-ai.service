@@ -1,0 +1,18 @@
+[Unit]
+Description=Sovereign AI Suite
+After=network.target mongod.service
+Wants=mongod.service
+
+[Service]
+Type=forking
+User=sovereign-ai
+Group=sovereign-ai
+WorkingDirectory=/opt/sovereign-ai-suite
+Environment="PATH=/opt/sovereign-ai-suite/venv/bin"
+ExecStart=/opt/sovereign-ai-suite/scripts/start_all.sh
+ExecStop=/opt/sovereign-ai-suite/scripts/stop_all.sh
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
